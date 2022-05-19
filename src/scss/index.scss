@@ -1,0 +1,24 @@
+@import url("./null.css");
+@import url("./components/select-country.scss");
+@import url("./components/day-info.scss");
+@import url("./components/top-recovered.scss");
+
+body {
+    background-color: #E5E5E5;
+}
+.wrapper {
+    // width: 1440px;
+    // height: 1024px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.content{
+    display: flex;
+    margin-top: 40px;
+}
