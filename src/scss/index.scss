@@ -2,13 +2,10 @@
 @import url("./components/select-country.scss");
 @import url("./components/day-info.scss");
 @import url("./components/top-recovered.scss");
+@import url("./components/preloader.css");
 
 body {
     background-color: #E5E5E5;
-}
-.wrapper {
-    // width: 1440px;
-    // height: 1024px;
 }
 
 .container {
@@ -18,7 +15,7 @@ body {
     margin-top: 40px;
 }
 
-.content{
+.content {
     display: flex;
     margin-top: 40px;
 }

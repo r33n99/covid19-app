@@ -4,6 +4,7 @@ import axios from "axios";
 const initialState = {
   countries: [],
   lastCountries: [],
+  loading: false,
   selectedCountry: localStorage.getItem("selectedCountry")
     ? localStorage.getItem("selectedCountry")
     : "kyrgyzstan",
@@ -11,6 +12,7 @@ const initialState = {
 
 const to = new Date(new Date().getTime()).toISOString().slice(0, 10);
 const from = new Date(new Date().getTime() - 5 * 24 * 3600000).toISOString();
+
 export const getDataCountries = createAsyncThunk(
   "covid/covidData",
   async () => {
@@ -51,9 +53,12 @@ export const covidSlice = createSlice({
     [getDataCountries.rejected]: (state) => {
       state.status = "error";
     },
-    [getDataFiveDays.pending]: (state) => {},
+    [getDataFiveDays.pending]: (state) => {
+      state.loading = true;
+    },
     [getDataFiveDays.fulfilled]: (state, action) => {
       state.lastCountries = action.payload;
+      state.loading = false;
     },
     [getDataFiveDays.rejected]: (state) => {
       state.status = "error";
