@@ -2,4 +2,4 @@
 
 # This app for info about covid19
 
-<a href="covid19-app-r33n.surge.sh">demo</a>
+<a href="https://covid19-app-r33n.surge.sh/">demo</a>
