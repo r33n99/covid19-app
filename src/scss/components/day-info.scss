@@ -1,6 +1,10 @@
 .one-day {
    margin: 0 20px 0 0;
 
+   @media screen and (max-width: 990px) {
+      margin: 0 auto;
+   }
+
    &__item {
       margin: 20px 0;
       width: 800px;
@@ -13,6 +17,14 @@
       align-items: center;
       font-size: 18px;
 
+      @media screen and (max-width: 990px) {
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         font-size: 12px;
+         padding: 8px;
+      }
+
       &:first-child {
          margin: 0;
       }
@@ -24,12 +36,18 @@
          justify-content: space-between;
          flex-wrap: wrap;
 
-         &__container {
+         &__info {
             width: 94px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 10px;
+
+            @media screen and (max-width: 990px) {
+               width: 50px;
+               margin: 15px 10px;
+               flex-direction: column;
+            }
 
             p {
                margin-right: 30px;

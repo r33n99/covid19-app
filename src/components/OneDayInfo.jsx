@@ -1,24 +1,28 @@
 import React from "react";
 
-export const OneDayInfo = ({ Date, Active, Deaths, Confirmed, Recovered }) => {
+export const OneDayInfo = (props) => {
+  const oneDayDate = new Date(props.Date).getDate(); // date of one day
+  const oneDayMonth = new Date(props.Date).toLocaleString("eng", {
+    month: "long",
+  }); // month from Date
 
-  // const topRecoveredDate = new Date().getDate() // здесь произошли сложности в выводе даты потому что имя конструктора совпадает с именем объекта, не успел разобраться
-  // const topRecoveredMonth = new Date().getMonth(); // здесь то же самое
   return (
     <div className="one-day__item">
-      <div className="one-day__item-date">{Date}</div>
+      <div className="one-day__item-date">
+        {oneDayDate} {oneDayMonth}
+      </div>
       <div className="one-day__item-temp">
-        <div className="one-day__item-temp__container">
-          <p>Active:</p> <span>{Active}</span>
+        <div className="one-day__item-temp__info">
+          <p>Active:</p> <span>{props.Active}</span>
         </div>
-        <div className="one-day__item-temp__container">
-          <p>Deaths:</p> <span>{Deaths}</span>
+        <div className="one-day__item-temp__info">
+          <p>Deaths:</p> <span>{props.Deaths}</span>
         </div>
-        <div className="one-day__item-temp__container">
-          <p>Confirmed:</p> <span>{Confirmed}</span>
+        <div className="one-day__item-temp__info">
+          <p>Confirmed:</p> <span>{props.Confirmed}</span>
         </div>
-        <div className="one-day__item-temp__container">
-          <p>Recovered:</p> <span>{Recovered}</span>
+        <div className="one-day__item-temp__info">
+          <p>Recovered:</p> <span>{props.Recovered}</span>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { getDataCountries } from "./features/slice/covidSlice";
 function App() {
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(getDataCountries());
+    dispatch(getDataCountries()); // get countries data
   }, [dispatch]);
 
   return (

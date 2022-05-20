@@ -3,15 +3,15 @@ import axios from "axios";
 
 const initialState = {
   countries: [],
-  lastCountries: [],
+  lastFiveDaysCountries: [],
   loading: false,
   selectedCountry: localStorage.getItem("selectedCountry")
     ? localStorage.getItem("selectedCountry")
-    : "kyrgyzstan",
-};
+    : "kyrgyzstan", 
+};  
 
-const to = new Date(new Date().getTime()).toISOString().slice(0, 10);
-const from = new Date(new Date().getTime() - 5 * 24 * 3600000).toISOString();
+const to = new Date(new Date().getTime()).toISOString().slice(0, 10);   // today's date
+const from = new Date(new Date().getTime() - 5 * 24 * 3600000).toISOString();   // 5 days ago
 
 export const getDataCountries = createAsyncThunk(
   "covid/covidData",
@@ -20,7 +20,7 @@ export const getDataCountries = createAsyncThunk(
     localStorage.setItem("covidData", JSON.stringify(response.data));
     return response.data;
   }
-);
+);  // get countries data
 export const getDataFiveDays = createAsyncThunk(
   "covid/covidDataFiveDays",
   async (country) => {
@@ -29,7 +29,7 @@ export const getDataFiveDays = createAsyncThunk(
     );
     return response.data;
   }
-);
+);  // get data for last 5 days
 
 export const covidSlice = createSlice({
   name: "covid",
@@ -40,7 +40,7 @@ export const covidSlice = createSlice({
       state.selectedCountry = action.payload;
       localStorage.setItem("selectedCountry", action.payload);
     },
-  },
+  },  // select country
 
   extraReducers: {
     [getDataCountries.pending]: (state) => {
@@ -57,7 +57,7 @@ export const covidSlice = createSlice({
       state.loading = true;
     },
     [getDataFiveDays.fulfilled]: (state, action) => {
-      state.lastCountries = action.payload;
+      state.lastFiveDaysCountries = action.payload;
       state.loading = false;
     },
     [getDataFiveDays.rejected]: (state) => {

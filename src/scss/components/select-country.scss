@@ -1,8 +1,11 @@
-
 .select-country {
     width: 360px;
     height: 61px;
     padding: 0 26px;
     border-radius: 5px;
     margin-top: 26px;
+
+    @media screen and (max-width: 990px) {
+        margin: 0 auto;
+    }
 }

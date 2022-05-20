@@ -8,10 +8,10 @@ export const SelectCountry = () => {
 
   const handleChangeCountry = (e) => {
     dispatch(selectCountry(e.target.value));
-  };
+  };  // dispatch action to select country
 
   React.useEffect(() => {
-    dispatch(getDataFiveDays(selectedCountry));
+    dispatch(getDataFiveDays(selectedCountry)); // get data for selected country
   }, [selectedCountry, dispatch]);
   return (
     <>
