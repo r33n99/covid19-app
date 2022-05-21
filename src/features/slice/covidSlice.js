@@ -58,6 +58,7 @@ export const covidSlice = createSlice({
     },
     [getDataFiveDays.fulfilled]: (state, action) => {
       state.lastFiveDaysCountries = action.payload;
+      console.log(action.payload)
       state.loading = false;
     },
     [getDataFiveDays.rejected]: (state) => {

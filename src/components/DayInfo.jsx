@@ -6,8 +6,8 @@ export const DayInfo = () => {
   const { lastFiveDaysCountries } = useSelector((state) => state.covid);
   return (
     <div className="one-day">
-      {lastFiveDaysCountries?.map((item, index) => (
-        <OneDayInfo key={`${new Date()} + ${index}`} {...item} />
+      {lastFiveDaysCountries?.map((item) => (
+        <OneDayInfo key={item.ID} {...item} />
       ))}
     </div>
   );

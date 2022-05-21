@@ -15,7 +15,6 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      font-size: 18px;
 
       @media screen and (max-width: 990px) {
          display: flex;
@@ -29,12 +28,12 @@
          margin: 0;
       }
 
-      &-data {
-         display: flex;
-         justify-content: flex-start;
+      &-date {
+         font-size: 22px;
       }
 
       &-temp {
+         font-size: 18px;
          margin: 0 0 0 65px;
          display: flex;
          width: 329px;
@@ -45,6 +44,7 @@
             width: 94px;
             display: flex;
             margin: 15px 8px;
+            align-items: center;
 
             @media screen and (max-width: 990px) {
                width: 50px;
