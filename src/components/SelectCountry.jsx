@@ -8,28 +8,28 @@ export const SelectCountry = () => {
 
   const handleChangeCountry = (e) => {
     dispatch(selectCountry(e.target.value));
-  };  // dispatch action to select country
+  }; // dispatch action to select country
 
   React.useEffect(() => {
     dispatch(getDataFiveDays(selectedCountry)); // get data for selected country
   }, [selectedCountry, dispatch]);
   return (
-    <>
+    <div className="select-country">
       <select
         onChange={handleChangeCountry}
-        className="select-country"
+        className="select-country__select"
         value={selectedCountry}
       >
         {countries.map((item, index) => (
           <option
             key={`${new Date()} + ${index}`}
-            className="select-country__item"
+            className="select__item"
             value={item.Slug}
           >
             {item.Country}
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 };

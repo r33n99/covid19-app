@@ -1,6 +1,7 @@
 import React from "react";
 
 export const OneDayInfo = (props) => {
+  //здесь пришлось вытащить через props, потому что имя пропса совпадало с конструктором.
   const oneDayDate = new Date(props.Date).getDate(); // date of one day
   const oneDayMonth = new Date(props.Date).toLocaleString("eng", {
     month: "long",

@@ -29,19 +29,22 @@
          margin: 0;
       }
 
-      &-temp {
-         margin: 0 0 0 20px;
+      &-data {
          display: flex;
-         max-width: 329px;
+         justify-content: flex-start;
+      }
+
+      &-temp {
+         margin: 0 0 0 65px;
+         display: flex;
+         width: 329px;
          justify-content: space-between;
          flex-wrap: wrap;
 
          &__info {
             width: 94px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px;
+            margin: 15px 8px;
 
             @media screen and (max-width: 990px) {
                width: 50px;
@@ -50,7 +53,7 @@
             }
 
             p {
-               margin-right: 30px;
+               margin-right: 35px;
             }
 
             span {

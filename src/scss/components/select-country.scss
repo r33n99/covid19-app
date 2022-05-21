@@ -1,9 +1,16 @@
 .select-country {
-    width: 360px;
-    height: 61px;
-    padding: 0 26px;
-    border-radius: 5px;
-    margin-top: 26px;
+    &__select {
+        width: 360px;
+        height: 61px;
+        border-radius: 5px;
+        padding: 0 20px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 1) url('https://cdn-icons-png.flaticon.com/512/32/32195.png') no-repeat scroll calc(92% + 3px) center/2px auto;
+        background-size: 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
 
     @media screen and (max-width: 990px) {
         margin: 0 auto;
